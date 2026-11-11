@@ -1,0 +1,9 @@
+# Named Cloudflare Tunnel config (production)
+# Activate after: cloudflared tunnel login && cloudflared tunnel create ai-bridge
+tunnel: <TUNNEL_ID>
+credentials-file: ~/.cloudflared/<TUNNEL_ID>.json
+
+ingress:
+  - hostname: bridge.yourdomain.com
+    service: http://localhost:3000
+  - service: http_status:404
